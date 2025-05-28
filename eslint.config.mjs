@@ -5,16 +5,23 @@ export default [
   {
     files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
+      parser: '@babel/eslint-parser',  // 👈 Añade el parser de Babel
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        requireConfigFile: false,
+        babelOptions: {
+          presets: ['@babel/preset-react']
+        }
+      },
       globals: globals.browser
     },
     plugins: {
-      react,  // ✅ Importado y usado como objeto
+      react
     },
     settings: {
       react: {
-        version: 'detect'  // Detecta automáticamente la versión de React
+        version: 'detect'
       }
     },
     rules: {

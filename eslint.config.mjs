@@ -1,3 +1,4 @@
+import babelParser from '@babel/eslint-parser';
 import react from 'eslint-plugin-react';
 import globals from 'globals';
 
@@ -5,7 +6,7 @@ export default [
   {
     files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
-      parser: '@babel/eslint-parser',  // 👈 Añade el parser de Babel
+      parser: babelParser,  // 👈 Importado como objeto
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
